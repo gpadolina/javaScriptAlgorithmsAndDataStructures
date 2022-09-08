@@ -159,3 +159,29 @@ function trueOrFalse(wasThatTrue) {
 
 #### Comparison with the Equality Operator
 ```
+// Setup
+function testEqual(val) {
+  if (val == 12) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+testEqual(10);
+```
+
+#### Comparison with the Strict Equality Operator
+```
+// Setup
+function testStrict(val) {
+  if (val === 7) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+testStrict(10);
+```
+
+#### Practice comparing different values
+```
