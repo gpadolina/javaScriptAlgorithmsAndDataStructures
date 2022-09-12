@@ -595,3 +595,256 @@ function cc(card) {
 
 cc(2); cc(3); cc(7); cc('K'); cc('A');
 ```
+
+#### Build JavaScript Objects
+```
+const myDog = {
+  // Only change code below this line
+  "name": "Coco",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["him", "her"]
+
+  // Only change code above this line
+};
+```
+
+#### Accessing Object Properties with Dot Notation
+```
+// Setup
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+// Only change code below this line
+const hatValue = testObj.hat;      // Change this line
+const shirtValue = testObj.shirt;    // Change this line
+```
+
+#### Accessing Object Properties with Bracket Notation
+```
+// Setup
+const testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Only change code below this line
+const entreeValue = testObj["an entree"];   // Change this line
+const drinkValue = testObj["the drink"];    // Change this line
+```
+
+#### Accessing Object Properties with Variables
+```
+// Setup
+const testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line
+const playerNumber = 16;  // Change this line
+const player = testObj[playerNumber];   // Change this line
+```
+
+#### Updating Object Properties
+```
+// Setup
+const myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line
+myDog.name = "Happy Coder"
+```
+
+#### Add New Properties to a JavaScript Object
+```
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark = "woof";
+```
+
+#### Delete Properties from a JavaScript Object
+```
+// Setup
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+// Only change code below this line
+delete myDog.tails;
+```
+
+#### Using Objects for Lookups
+```
+// Setup
+function phoneticLookup(val) {
+  let result = "";
+
+  // Only change code below this line
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+  result = lookup[val]
+
+  // Only change code above this line
+  return result;
+}
+
+phoneticLookup("charlie");
+```
+
+#### Testing Objects for Properties
+```
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return "Not Found";
+  }
+  // Only change code above this line
+}
+```
+
+#### Manipulating Complex Objects
+```
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "Fake",
+    "title": "Fake",
+    "release_year": 2000,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ]
+  }
+];
+```
+
+#### Accessing Nested Objects
+```
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+```
+
+#### Accessing Nested Arrays
+```
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
+```
+
+#### Record Collection
+```
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  // Access target album in record collection
+  const album = records[id];
+
+  // If value is an empty string,
+  //  delete the given prop property from the album
+  if (value === "") {
+    delete album[prop];
+  }
+  // If prop isn't tracks,
+  //  update or set that album's prop to value
+  else if (prop !== "tracks") {
+    album[prop] = value;
+  }
+  // If prop is tracks,
+  //  add value to the end of the album's existing tracks array
+  else {
+    album["tracks"] = album["tracks"] || [];
+    album["tracks"].push(value);
+  }
+
+  // Your function must always return the entire record collection object
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+```
