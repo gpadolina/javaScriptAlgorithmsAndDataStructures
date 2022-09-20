@@ -69,3 +69,33 @@ let quoteSample = "Blueberry 3.141592653s are delicious.";
 let myRegex = /[h-s2-6]/ig; // Change this line
 let result = quoteSample.match(myRegex); // Change this line
 ```
+
+#### Match Single Characters Not Specified
+```
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou0-9]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+```
+
+#### Match Characters that Occur One or More Times
+```
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g; // Change this line
+let result = difficultSpelling.match(myRegex);
+```
+
+#### Match Characters that Occur Zero or More Times
+```
+// Only change code below this line
+let chewieRegex = /Aa*/; // Change this line
+// Only change code above this line
+
+let result = chewieQuote.match(chewieRegex);
+```
+
+#### Find Characters with Lazy Matching
+```
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // Change this line
+let result = text.match(myRegex);
+```
