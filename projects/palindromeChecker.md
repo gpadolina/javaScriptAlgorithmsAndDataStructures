@@ -12,13 +12,19 @@ We'll also pass strings with special symbols, such as 2A3*3a2, 2A3 3a2, and 2_A3
 
 ```
 function palindrome(str) {
-  str = str.toLowerCase().replace(/(\W)|(\_)/g,"").split("");
-  for (var i = 0; i < str.length; i++) {
-    if (str[i] !== str[str.length - 1 - i]) {
-      return false;
-    }
+  // Turn everything to lower case
+  str = str.toLowerCase();
+  // Remove all alphanumeric characters
+  str = str.replace(/[^a-z0-9]/g, '');
+
+  var backward = str.split('');
+  backward = backward.reverse().join('').toString();
+
+  if (backward == str) {
+    return true;
+  } else {
+    return false;
   }
-  return true;
 }
 
 palindrome("eye");
